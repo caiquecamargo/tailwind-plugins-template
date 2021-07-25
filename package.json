@@ -1,0 +1,34 @@
+{
+  "name": "@caiquecamargo/plugin-name",
+  "version": "0.0.0",
+  "description": "Template for creation of tailwind plugins",
+  "main": "src/index.js",
+  "files": [
+    "src/*.js",
+    "dist/"
+  ],
+  "scripts": {
+    "prepublishOnly": "node scripts/build.js",
+    "postversion": "npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caiquecamargo/tailwind-plugin-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caiquecamargo/tailwind-plugin-template/issues"
+  },
+  "homepage": "https://github.com/caiquecamargo/tailwind-plugin-template#readme",
+  "peerDependencies": {
+    "tailwindcss": ">=2.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.0",
+    "clean-css": "^4.2.1",
+    "postcss": "^8.2.2",
+    "tailwindcss": "^2.0.2"
+  }
+}
