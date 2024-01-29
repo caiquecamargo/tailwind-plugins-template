@@ -1,34 +1,59 @@
 {
   "name": "@caiquecamargo/plugin-name",
-  "version": "0.0.0",
-  "description": "Template for creation of tailwind plugins",
-  "main": "src/index.js",
-  "files": [
-    "src/*.js",
-    "dist/"
-  ],
-  "scripts": {
-    "prepublishOnly": "node scripts/build.js",
-    "postversion": "npm publish"
-  },
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Template to scaffold a TailwindCSS plugin",
+  "author": "Caique de Camargo",
+  "license": "ISC",
+  "homepage": "https://github.com/caiquecamargo/tailwind-plugins-template#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caiquecamargo/tailwind-plugin-template.git"
+    "url": "git+https://github.com/caiquecamargo/tailwind-plugins-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caiquecamargo/tailwind-plugins-template/issues"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/caiquecamargo/tailwind-plugin-template/issues"
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
   },
-  "homepage": "https://github.com/caiquecamargo/tailwind-plugin-template#readme",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "prepublishOnly": "pnpm build",
+    "pub": "pnpm publish",
+    "dev": "vite dev --host",
+    "test": "vitest",
+    "build": "tsup"
+  },
   "peerDependencies": {
-    "tailwindcss": ">=2.0.0"
+    "tailwindcss": ">=3.0.0"
+  },
+  "dependencies": {
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.0",
-    "clean-css": "^4.2.1",
-    "postcss": "^8.2.2",
-    "tailwindcss": "^2.0.2"
+    "@antfu/eslint-config": "^2.6.3",
+    "@types/node": "^20.11.10",
+    "@vitejs/plugin-vue": "^5.0.3",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "tsup": "^8.0.1",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.2",
+    "vue": "^3.4.15"
   }
 }
